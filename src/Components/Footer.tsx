@@ -27,11 +27,11 @@ export const Container = Styled.div`
 
 export const Button = Styled.button`
     height: 35px;
-    width: 125px;
+    width: 150px;
     color: #FFFFFF;
-    font-size: 10px;
-    font-weight: bold;
+    font-size: 15px;
+    font-weight: ;
     background:#2E9CCA;
-    border-radius: 10px;
+    border: 1px solid #2E9CCA;
     margin: 5px
 `;

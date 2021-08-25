@@ -1,21 +1,23 @@
 import React from 'react';
-// import {
-//   BrowserRouter as Router,
-//   Route,
-//   Switch,
-//   Redirect,
-// } from 'react-router-dom';
 import { Global } from './Styles/GlobalStyles';
 import Styled from 'styled-components';
 import Header from './Components/Header';
 import Contents from './Components/Contents';
 import Footer from './Components/Footer';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-const App = () => {
+type Props = {
+  toggleNavBar: Function;
+};
+
+const App = (props: Props) => {
   return (
     <>
       <Global />
-      <Contents />
+      <Router>
+        <Header />
+        <Contents />
+      </Router>
       <Footer />
     </>
   );

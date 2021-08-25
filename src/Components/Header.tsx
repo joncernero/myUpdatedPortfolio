@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Styled from 'styled-components';
 import Navigation from './Nav';
+import NavBar from './NavBar';
 
 const Header = () => {
+  const [navBarActive, setNavBarActive] = useState(false);
+
+  const toggleNavBar = () => {
+    setNavBarActive(!navBarActive);
+  };
+
   return (
     <Container>
-      <Navigation />
-      <h1>Jonathan</h1>
+      <Navigation toggleNavBar={toggleNavBar} />
+      {navBarActive ? <NavBar toggleNavBar={toggleNavBar} /> : null}
     </Container>
   );
 };
@@ -15,14 +22,8 @@ export default Header;
 
 export const Container = Styled.div`
     display: flex;
-    align-items: center;
     height: 10vh;
-    background-color: #212345;
+    background-color: #464866;
     color: '#FFFFFF';
     
-
-    h1 {
-      color: #FFFFFF;
-      text-align: center;
-    }
 `;
